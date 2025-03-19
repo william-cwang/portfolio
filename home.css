@@ -56,7 +56,7 @@ button:hover {
     top: 0;
     background-image: url("img/Portrait\ 2.jpg");
     background-size: cover;
-    height: 812px;
+    height: 100%;
     width: 100%;
     z-index: 2;
 }
