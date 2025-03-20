@@ -3,77 +3,12 @@
     padding: 0;
 }
 body {
-    margin-top: 100vh;
-    background-color: #efefef;
-    left: 0;
-    right: 0;
-}
-h1 {
-    font-family: "Judson", serif;
-    font-weight: 700, bold;
-    font-size: 90px;
-    margin: 0;
-    position: relative;
-    overflow-wrap: break-word;
-}
-h2 {
-    font-family: "Judson", serif;
-    font-weight: 700, bold;
-    color: #666;
-    font-size: 70px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #444;
-}
-#headText p {
     font-family: "Open Sans", arial, helvetica;
-    font-weight: 300, light;
-    font-size: 40px;
-}
-p {
-    font-family: "Open Sans", arial, helvetica;
-    font-weight: 300, light;
-    font-size: 16px;
-    padding: 20px 0;
-}
-.b1, .b2 {
-    background-color: rgba(0, 0, 0, 0);
-    padding: 10px 15px;
-    font-family: "Judson", serif;
-    color: #FFF;
-    font-size: 40px;
-    border: 2px solid #FFF;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-.b2 {
-    color: #444;
-    border: 2px solid #444;
-}
-button:hover {
-    cursor: pointer;
+    background-color: #EFEFEF;
 }
 #head {
-    position: absolute;
-    top: 0;
     background-image: url("img/Portrait\ 2.jpg");
     background-size: cover;
-    background-position: center top; 
-    height: 100vh;
-    left: 0;
-    right: 0;
-    z-index: 2;
-}
-#headText {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 40px;
-    padding: 0 40px;
-    color: #FFF;
-}
-#william {
-    width: 100%;
-    position: absolute;
     height: 100vh;
 }
 #topGradient {
@@ -88,57 +23,83 @@ button:hover {
     top: 0;
     height: 100vh;
     background: linear-gradient(to bottom, 
-    rgba(217, 217, 217, 0), rgba(4, 3, 0, 0.6) 95%);
+    rgba(217, 217, 217, 0), rgba(4, 3, 0, 0.6) 75%);
+}
+#headText {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+    padding: 0 40px;
+    color: #FFF;
+}
+h1 {
+    font-size: 7em;
+    font-family: "Judson", serif, times;
+    padding: 5px 0;
+}
+h2, h3 {
+    font-family: "Judson", serif, times;
+    font-size: 4em;
+    padding-bottom: 25px;
+    margin-top: 80px;
+    color: #444;
+    border-bottom: 1px solid #666;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+    border: none;
+}
+#headText h2 {
+    font-size: 3em;
+    margin: 0;
+    border-bottom: none;
+    color: #EEE;
+    margin: 10px 0;
+    font-weight: 300;
+}
+p {
+    font-size: 1.5em;
+    padding: 30px 0;
+}
+.b1, .b2 {
+    font-family: "Judson", serif, times;
+    font-size: 3em;
+    margin: 20px 0;
+    padding: 25px 35px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #FFF;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 12px;
+}
+.b2 {
+    color: #444;
+    border: 2px solid #444;
+}
+button:hover {
+    cursor: pointer;
 }
 .section {
-    font-family: "open sans", arial, helvetica;
-    padding: 40px 40px;
+    margin: 40px;
+}
+.project {
+    margin: 40px 0;
 }
 .date {
     text-transform: uppercase;
     color: #666;
-    padding: 0;
-    margin-top: 30px;
-}
-h3 {
-    font-family: "Judson", serif;
-    color: #444444;
-    font-size: 50px;
-}
-.project {
-    padding: 20px 0;
+    font-size: 1em;
+    margin: 0;
 }
 .seeProject {
+    font-family: "Judson", serif;
     font-weight: bold;
-    font-family: "Open sans", arial, helvetica;
-    color: #695034;
 }
-#head2 {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-}
-#head2 div {
-    display: inline-block;
-    flex: 1;
+.material-symbols-outlined {
+    padding-left: 15px;
+    padding-bottom: 10px;
+    font-size: 24px !important;
     vertical-align: middle;
-}
-.section p {
-    font-size: 26px;
-}
-@media screen and (min-width: 550px) {
-    h1 {
-        font-size: 70px;
-    }
-    #head p {
-        font-size: 40px;
-    }
-}
-@media screen and (min-width: 800px) {
-    #head {
-        /* display: none; */
-    }
 }
