@@ -9,7 +9,8 @@ body {
 #head {
     background-image: url("img/Portrait\ 2.jpg");
     background-size: cover;
-    height: 100vh;
+    background-position: center;
+    height: 100dvh;
 }
 #topGradient {
     height: 150px;
@@ -33,13 +34,13 @@ body {
     color: #FFF;
 }
 h1 {
-    font-size: 7em;
+    font-size: 110px;
     font-family: "Judson", serif, times;
     padding: 5px 0;
 }
 h2, h3 {
     font-family: "Judson", serif, times;
-    font-size: 4em;
+    font-size: 60px;
     padding-bottom: 25px;
     margin-top: 80px;
     color: #444;
@@ -52,7 +53,7 @@ h3 {
     border: none;
 }
 #headText h2 {
-    font-size: 3em;
+    font-size: 50px;
     margin: 0;
     border-bottom: none;
     color: #EEE;
@@ -60,12 +61,12 @@ h3 {
     font-weight: 300;
 }
 p {
-    font-size: 1.5em;
+    font-size: 18px;
     padding: 30px 0;
 }
 .b1, .b2 {
     font-family: "Judson", serif, times;
-    font-size: 3em;
+    font-size: 50px;
     margin: 20px 0;
     padding: 25px 35px;
     background-color: rgba(0, 0, 0, 0);
@@ -85,21 +86,28 @@ button:hover {
     margin: 40px;
 }
 .project {
-    margin: 40px 0;
+    color: #000;
+    margin-top: 60px;
+}
+.project p {
+    color: #555;
 }
 .date {
     text-transform: uppercase;
     color: #666;
-    font-size: 1em;
+    font-size: 20px;
+    padding: 0;
     margin: 0;
 }
 .seeProject {
     font-family: "Judson", serif;
     font-weight: bold;
+    font-size: 40px;
 }
 .material-symbols-outlined {
     padding-left: 15px;
     padding-bottom: 10px;
     font-size: 24px !important;
     vertical-align: middle;
+    color: #555;
 }
