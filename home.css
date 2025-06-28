@@ -10,8 +10,7 @@ header {
     padding: 0 40px;
     z-index: 1;
     background-color: #ffffff99;
-    backdrop-filter: blur(12px);
-    transition: transform 0.3s ease;  
+    backdrop-filter: blur(8px);
 
     box-shadow: 0 4px 20px #00000011;
     transform: translateY(-100%);
@@ -22,6 +21,54 @@ header {
 }
 body {
     z-index: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+body::after {
+    content: '';
+    display: block;
+    height: 100px;
+    padding-bottom: 100px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(340deg, #072854, #7FA9E0);
+    color: #FFF;
+    padding: 40px;
+    height: 100px;
+}
+.headerBox {
+    height: 50px;
+    line-height: 50px;
+}
+.headerBox .headerBoxElements {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-top: 10px;
+    list-style: none;
+    --height: 50px;
+    height: var(--height);
+    line-height: var(--height);
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: 600;
+    color: #555555;
+    white-space: nowrap;
+}
+.headerBox p {
+    transition: 0.3s ease;
+    font-weight: 900;
+    color: #7FA9E0;
+    /* --webkit-text-fill-color: transparent;
+    background: linear-gradient(200deg, #072854, #7FA9E0);
+    --webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; */
 }
 p {
     line-height: 1.4em;
@@ -54,30 +101,35 @@ img {
     width: 50vw;
     max-width: 250px;
 }
+.social a span {
+    color: #FFF;
+    font-size: 36px;
+    padding: 10px 0;
+    font-weight: bold;
+}
 
 
 /* Buttons */
 .button-collection {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     margin: 10px 0;
 }
 .button-collection button, .exp a button, header button {
-    font-family: "Montserrat", Arial, Helvetica;
+    font-family: "Open Sans", Arial, Helvetica;
     font-weight: 600;
-    padding: 14px 18px;
-    margin: 5px;
+    padding: 10px 18px;
+    margin: 0px 8px 0px 0px;
     border-radius: 24px;
     text-align: center;
     font-size: 16px;
-    border: 2px solid #11468C;
+    border: 1px solid #11468C;
     cursor: pointer;
 }
 .button-light, header button {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF99;
     color: #11468C;
-    transition: background-color 0.3s ease; 
-
+    transition: background-color 0.3s ease;
 }
 .button-dark, .exp a button {
     background-color: #11468C;
@@ -90,9 +142,86 @@ img {
 }
 .button-dark:hover, .exp a button:hover {
     background-color: #072854;
-    border: 2px solid #072854;
+    border: 1px solid #072854;
+}
+button.button-light-underline {
+    border: none;
+    border-radius: 0px;
+    padding: 6px 15px;
+    color: #11468C;
+    border: 1px solid #11468C;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    font-weight: 300;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+button.button-light-underline:hover {
+    color: #FFFFFF;
+    background-color: #11468C;
 }
 
+/* Slide */
+.images {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px; 
+    border: 1px solid #7FA9E0;
+    border-radius: 12px;
+}
+.slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.slide div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+.slide p {
+    padding: 0;
+    height: 90px;
+    line-height: normal;
+    display: inline-block;
+    text-align: center;
+}
+.slide h5 {
+    font-family: "Inter", Arial, Helvetica;
+    font-size: 24px;
+    color: #7FA9E0;
+    padding: 10px 0;
+}
+.slide div img {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+}
+button span {
+    font-size: 20px;
+    padding: 0 4px;
+}
+div.slideButton {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+.slide h5.rightH5 {
+    display: none;
+    padding: 0;
+}
+
+/* Footer */
+footer h6 {
+    font-size: 24px;
+    font-family: "Montserrat", "Open Sans", Arial, Helvetica;
+    font-weight: 300;
+}
 
 /* Animation */
 .wrapper .content {
@@ -309,6 +438,7 @@ svg:hover {
 @media (min-width: 541px) {
     #headBanner {
         justify-content: center;
+        height: 90svh;
     }
     #headBanner .head {
         display: flex;
@@ -319,6 +449,33 @@ svg:hover {
     .button-light {
         padding-left: 0;
         margin: 0;
+    }
+    button.button-light-underline {
+        margin: 10px 10px 0 0;
+    }
+    .slide div {
+        flex-direction: row;
+    }
+    .slide .right {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 10px;
+    }
+    .slide p {
+        text-align: left;
+        height: auto;
+    }
+    .right .slideButton {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+    .slide h5 {
+        display: none;
+    }
+    .slide h5.rightH5 {
+        display: block;
     }
 }
 
@@ -341,8 +498,24 @@ svg:hover {
     header {
         padding: 0 120px;
     }
-    .body {
+    .body, footer {
         padding: 40px 120px;
+    }
+
+    /* Slides */
+    .images {
+        border: none;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+    }
+    .slide {
+        display: inline-block;
+        padding: 2px;
+    }
+    .slide .right {
+        display: none;
     }
 }
 
