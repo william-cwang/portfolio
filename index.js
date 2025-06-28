@@ -9,7 +9,7 @@ window.addEventListener('resize', () => {
 
 window.addEventListener('scroll', () => {
     const curr = window.pageYOffset || document.documentElement.scrollTop;
-    if (curr < vhThreshold) {
+    if (curr < vhThreshold * 0.9) {
         header.style.transition = '0.3s ease';
         header.classList.remove('visible');
         header.classList.add('hidden');
@@ -23,7 +23,6 @@ window.addEventListener('scroll', () => {
     const experience = document.getElementById("experience").offsetTop;
     const education = document.getElementById("education").offsetTop;
     const culture = document.getElementById("culture").offsetTop;
-    console.log(experience + " " + curr);
     if (projects > curr & projects >= 0) {
         headerElements.forEach(p => {
             p.style.transform = 'translateY(0)';

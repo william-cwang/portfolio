@@ -64,11 +64,6 @@ footer {
     transition: 0.3s ease;
     font-weight: 900;
     color: #7FA9E0;
-    /* --webkit-text-fill-color: transparent;
-    background: linear-gradient(200deg, #072854, #7FA9E0);
-    --webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; */
 }
 p {
     line-height: 1.4em;
@@ -112,7 +107,7 @@ img {
 /* Buttons */
 .button-collection {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     margin: 10px 0;
 }
 .button-collection button, .exp a button, header button {
@@ -425,6 +420,17 @@ svg:hover {
 #header.visible {
     transform: translateY(0);
 }
+@media (max-width: 450px) {
+    .body, header, footer {
+        padding: 0 25px;
+    }
+    footer {
+        padding-top: 30px;
+    }
+    #resume {
+        display: none;
+    }
+}
 @media (min-height: 500px) and (max-width: 540px) {
     header {
         height: 60px;
@@ -432,7 +438,7 @@ svg:hover {
     #headBanner {
         display: flex;
         justify-content: center;
-        height: 100svh;
+        height: 90svh;
     }
 }
 @media (min-width: 541px) {
@@ -446,15 +452,19 @@ svg:hover {
         justify-content: center;
         text-align: left;   
     }
-    .button-light {
-        padding-left: 0;
-        margin: 0;
+    .button-collection {
+        justify-content: start;
     }
     button.button-light-underline {
         margin: 10px 10px 0 0;
     }
     .slide div {
         flex-direction: row;
+    }
+    .slide div > :first-child {
+        flex-basis: 0 0 200px;
+        max-width: 220px;
+        margin: 10px;
     }
     .slide .right {
         display: flex;
@@ -463,13 +473,16 @@ svg:hover {
         padding: 10px;
     }
     .slide p {
+        padding-left: 10px;
         text-align: left;
         height: auto;
     }
     .right .slideButton {
-        display: flex;
-        flex-direction: row;
         justify-content: start;
+        margin-top: 5px;
+    }
+    .right .button-light-underline {
+        margin: 0 0 0 0;
     }
     .slide h5 {
         display: none;
@@ -513,6 +526,7 @@ svg:hover {
     .slide {
         display: inline-block;
         padding: 2px;
+        width: 200px;
     }
     .slide .right {
         display: none;
