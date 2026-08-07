@@ -4,7 +4,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: clamp(5rem, 8vw, 10rem);
-    margin-bottom: 50px;
+    margin-bottom: clamp(5rem, 8vw, 10rem);
     font-family: "Work Sans", "Inter", Helvetica, Arial;
     background-color: #FAFAFA;
 }
@@ -50,12 +50,32 @@ a:hover{
 .flex-box {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .flex-item {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#egypt {
+    width: 400px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(155, 155, 155, 0.8);
+    margin-top: 35px;
+}
+p.caption {
+    font-size: 12px;
+    text-align: center;
 }
 @media screen and (max-width: 767px) {
+    body {
+        width: 90%;
+    }
     .flex-box {
         display: flex;
         flex-direction: column;
@@ -68,5 +88,8 @@ a:hover{
     }
     h1, h2, h3, p {
         text-align: center;
+    }
+    #egypt {
+        width: 100%;
     }
 }
