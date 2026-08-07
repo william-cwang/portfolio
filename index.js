@@ -1,3 +1,21 @@
+/* Pages */
+let currentPage = 0;
+const pages = ["page-main", "page-contact"];
+
+for (let i = 0; i < pages.length; i++) {
+    if (i != currentPage) {
+        document.getElementById(pages[i]).style.display = "none";
+        console.log(i);
+    } else {
+        document.getElementById(pages[i]).style.display = "block";
+    }
+}
+if (currentPage == 0) {
+    document.getElementById("headBanner").style.display = "block";
+} else {
+    document.getElementById("headBanner").style.display = "none";
+}
+
 /* Header */
 const header = document.getElementById('header');
 const headerLength = 70; // current pixel number
@@ -8,36 +26,38 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('scroll', () => {
-    const curr = window.pageYOffset || document.documentElement.scrollTop;
-    if (curr < vhThreshold * 0.9) {
-        header.style.transition = '0.3s ease';
-        header.classList.remove('visible');
-        header.classList.add('hidden');
+    if (currentPage == 0) {
+        const curr = window.pageYOffset || document.documentElement.scrollTop;
+        if (curr < vhThreshold * 0.9) {
+            header.style.transition = '0.3s ease';
+            header.classList.remove('visible');
+            header.classList.add('hidden');
+        } else {
+            header.style.transition = '0.3s ease';
+            header.classList.remove('hidden');
+            header.classList.add('visible');
+        }
+
+        const projects = document.getElementById("projects").offsetTop;
+        const experience = document.getElementById("experience").offsetTop;
+        const education = document.getElementById("education").offsetTop;
+        const culture = document.getElementById("culture").offsetTop;
+        if (projects > curr & projects >= 0) {
+            headerElements.forEach(p => {
+                p.style.transform = 'translateY(0)';
+            })
+        } else if (projects < curr & curr < experience) {
+            headerElements.forEach(p => { p.style.transform = 'translateY(-100%)'; })
+        } else if (experience < curr & curr < education) {
+            headerElements.forEach(p => { p.style.transform = 'translateY(-200%)'; })
+        } else if (education < curr & curr < culture) {
+            headerElements.forEach(p => { p.style.transform = 'translateY(-300%)'; })
+        } else {
+            headerElements.forEach(p => { p.style.transform = 'translateY(-400%)'; })
+        }
     } else {
-        header.style.transition = '0.3s ease';
-        header.classList.remove('hidden');
         header.classList.add('visible');
     }
-
-    const projects = document.getElementById("projects").offsetTop;
-    const experience = document.getElementById("experience").offsetTop;
-    const education = document.getElementById("education").offsetTop;
-    const culture = document.getElementById("culture").offsetTop;
-    if (projects > curr & projects >= 0) {
-        headerElements.forEach(p => {
-            p.style.transform = 'translateY(0)';
-        })
-    } else if (projects < curr & curr < experience) {
-        headerElements.forEach(p => { p.style.transform = 'translateY(-100%)'; })
-    } else if (experience < curr & curr < education) {
-        headerElements.forEach(p => { p.style.transform = 'translateY(-200%)'; })
-    } else if (education < curr & curr < culture) {
-        headerElements.forEach(p => { p.style.transform = 'translateY(-300%)'; })
-    } else {
-        headerElements.forEach(p => { p.style.transform = 'translateY(-400%)'; })
-    }
-
-
 });
 
 

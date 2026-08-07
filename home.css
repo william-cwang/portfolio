@@ -14,6 +14,7 @@ header {
 
     box-shadow: 0 4px 20px #00000011;
     transform: translateY(-100%);
+    font-family: "Montserrat", sans-serif, arial;
 
     display: flex;
     align-items: center;
@@ -323,6 +324,24 @@ footer h6 {
     background-repeat: no-repeat;
     transition: background-size 0.5s;
 }
+a p.link {
+    font-weight: bold;
+    padding: 10px 0;
+    text-decoration: none;
+}
+p.link {
+    margin: 10px 0;
+    color: #7FA9E0;
+    border: 2px solid #7FA9E0;
+    border-radius: 100px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+p.link:hover {
+    cursor: pointer;
+    background-color: #7FA9E0;
+    color: #FFF;
+}
 .project h5 a:hover {
     cursor: pointer;
     background-size: 100% 2px;
@@ -400,6 +419,10 @@ h3 {
 }
 .body {
     padding: 40px;
+}
+.subpage {
+    margin-top: 100px;
+    min-height: 100vh;
 }
 
 svg {
